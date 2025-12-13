@@ -29,3 +29,34 @@ Menguji setiap fitur dari segi fungsionalitasnya untuk memastikan sistem bekerja
 
 ### Franchise
 <img width="748" height="415" alt="image" src="https://github.com/user-attachments/assets/a181fc7f-d95f-4ee9-af23-fea59038b3cf" />
+
+## User Guide
+Berikut panduan penggunaan Website kami
+
+1. Home
+Pengguna akan diarahkan pada halaman utama. Pada Home terdapat navigation bar yang mempunyai fungsi berbeda-beda.
+- Home
+Pada `Home` akan menampilkan landing page sebagai halaman utama pada home juga memperlihatkan menu signature dari Tetra Coffee, Informasi singkat mengenai Tetra Coffee, dan lokasi singkat dari Tetra Coffee Surabaya.
+- Tentang
+Pada `Tentang` berisikan informasi-informasi lebih lengkap tentang Tetra Coffee.
+- Menu
+Pada `Menu` menampilkan beberapa menu makanan dan juga minuman yang tersedia pada Tetra Coffee. Disini juga bisa untuk menambahkan menu ke cart yang akan di proses pada `Order Online`
+- Lokasi
+Pada `Lokasi` akan berisikan lokasi dari Tetra Coffee.
+- Franchise
+Pada `Franchise` akan menampilkan formulir untuk mengajukan franchise kepada pihak Tetra Coffee. Isi dari form yang harus diisi :
+  - Nama Lengkap
+  - Kota Target
+  - WhatsApp
+  - Email
+  - Modal
+  - Alasan
+- Kontak
+Pada `Kontak` menampilkan contact person dari beberapa sosial media dan juga cabang dari Tetra Coffee.
+- Order Online
+Pada `Order Online` menampilkan form untuk data pemesan yang berisikan:
+  - Nama Lengkap
+  - Nomor HP/ WhatsApp
+  - Alamat Pengiriman / Meja
+  - Catatan Tambahan
+Setelah Mengisi form, Pemesan diminta untuk membayar pemasanannya dengan Payment method yang tersedia.

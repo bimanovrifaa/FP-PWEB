@@ -62,23 +62,23 @@ Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang ko
   B. Struktur Tabel : 
       Website ini terdiri dari 5 tabel utama yang saling mendukung operasional sistem. Berikut adalah detail struktur masing-masing tabel:
       <img width="1989" height="650" alt="image" src="https://github.com/user-attachments/assets/eb43bc70-c8f9-4dd4-a2f8-76be11b59c73" />
-      ``
-      a. Tabel `Admins` :  Digunakan untuk menyimpan kredensial autentikasi administrator. Password disimpan dalam bentuk hash (MD5) untuk keamanan.
+      
+   a. Tabel `Admins` :  Digunakan untuk menyimpan kredensial autentikasi administrator. Password disimpan dalam bentuk hash (MD5) untuk keamanan.
           <img width="1920" height="450" alt="image" src="https://github.com/user-attachments/assets/7af3cdc1-9452-4670-89d2-2c90367ae94d" />
-      ```
-      b. Tabel `products` : Menyimpan seluruh katalog menu yang dijual, termasuk jalur (path) lokasi file gambar yang diunggah.
+      
+   b. Tabel `products` : Menyimpan seluruh katalog menu yang dijual, termasuk jalur (path) lokasi file gambar yang diunggah.
           <img width="1965" height="668" alt="image" src="https://github.com/user-attachments/assets/8a5623b0-2cb8-4522-90dc-f5eafb59405d" />
-      ``````````
-      c.  Tabel `orders` : Tabel transaksional yang mencatat setiap pesanan masuk, nilai transaksi, dan token integrasi dengan Payment Gateway.
+    
+   c.  Tabel `orders` : Tabel transaksional yang mencatat setiap pesanan masuk, nilai transaksi, dan token integrasi dengan Payment Gateway.
           <img width="2384" height="777" alt="image" src="https://github.com/user-attachments/assets/bf6fc497-9705-4e8e-994f-b010cda19ad0" />
-          ````
-      d. Tabel `franchise_leads` Menyimpan data prospek atau calon mitra yang mengisi formulir pendaftaran di website.
+       
+   d. Tabel `franchise_leads` Menyimpan data prospek atau calon mitra yang mengisi formulir pendaftaran di website.
           <img width="2479" height="689" alt="image" src="https://github.com/user-attachments/assets/a2e6de0a-1186-4d9f-b3a6-3b5d8f0317c9" />
-          `````
-      e. Tabel `branches` Menyimpan data lokasi fisik cabang Tetra Coffee untuk fitur Store Locator.
+       
+   e. Tabel `branches` Menyimpan data lokasi fisik cabang Tetra Coffee untuk fitur Store Locator.
           <img width="1994" height="583" alt="image" src="https://github.com/user-attachments/assets/8e735640-81e6-4cde-8d86-8cddc08f1bac" />
 
-     C. Query Pembentukan Database
+      C. Query Pembentukan Database
          ```
         -- Implementasi Tabel Transaksi
         CREATE TABLE orders (

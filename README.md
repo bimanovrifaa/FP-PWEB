@@ -28,6 +28,7 @@ Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang ko
    Bahasa Pemrograman : PHP.
    Database : MySQL
    Server Environment : Pada tahap pengembangan menggunakan *Apache*. Saat sudah final, hosting menggunakan infinityfree
+   
 2. Konfigurasi `koneksi.php`
    Di tahap ini, kami membuat file khusus untuk menghubungkan semua file ke database, yaitu file `koneksi.php`. Pendekatan ini digunakan agar penulisan kode pada setiap file lebih rapih.
    Adapun variabel-variabel yang digunakan di file `koneksi.php` adalah : 
@@ -35,6 +36,7 @@ Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang ko
    b. `$user` (Database Username) : Nama pengguna yang memiliki hak akses untuk masuk ke server database.
    c. `$pass` (Database Password) : Kata sandi yang berpasangan dengan username di atas.
    d. `$db` (Database Name) : Nama spesifik dari database yang ingin kita kelola.
+   
 3. Implementasi Logika Bisnis : 
    a. Sistem Autentikasi (Login Session) :
    b. Manajemen Konten (CRUD & File Handling) :

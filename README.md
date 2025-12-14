@@ -1,5 +1,22 @@
 # FP-PWEB
 
+## 1 Frontend & Backend Develelopment
+
+### A. Frontend Development
+Frontend dikembangkan sebagai antarmuka utama yang berinteraksi langsung dengan pengguna. Tujuan utama pengembangan frontend adalah menyediakan tampilan yang menarik, responsif, dan mudah digunakan.
+
+Fitur utama frontend meliputi:
+- Halaman Home sebagai landing page yang menampilkan informasi singkat Tetra Coffee
+- Halaman Menu yang menampilkan daftar produk lengkap dengan kategori, pencarian, dan harga
+- Fitur keranjang (cart) untuk menampung menu yang dipilih pengguna
+- Halaman Order Online untuk proses pemesanan
+- Halaman Franchise yang menyediakan formulir pengajuan mitra
+- Halaman Tentang yang memberikan informasi tentang Tetra Coffee
+- Halaman Lokasi yang memberikan lokasi dari Cafe Tetra Coffee
+- Halaman Kontak yang menyediakan kontak-kontak dari Tetra Coffee
+
+Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang konsisten serta tombol aksi yang jelas seperti Pesan Sekarang, Lihat Menu, Tentang, Lokasi, Franchise, dan Tambah ke Cart.
+
 ## 3. Integrasi Layanan Pihak Ketiga (API)
 Sistem ini dirancang dengan arsitektur terintegrasi yang menghubungkan backend PHP Native dengan layanan eksternal melalui REST API. Integrasi ini bertujuan untuk menangani fungsi kompleks seperti pembayaran digital dan geolokasi tanpa membebani server utama.
 

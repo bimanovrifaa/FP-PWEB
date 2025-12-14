@@ -4,7 +4,7 @@
 | ---            | ---        | ----------|
 | Dwinanda Rakhish Baley | 5025241198 | Frontend |
 | Bima Novrifa Ananditya | 5025241194 | Frontend |
-| Brilian Kurniawan Prasisto | 5025241213 | Backend |
+| Brilian Kurniawan Prasisto | 5025241213 | Backend : Pembuatan SQL, API (Payment Gateway), Integrasi dari Backend/Database ke Frontend |
 
 ## 1. Frontend & Backend Develelopment
 
@@ -24,8 +24,83 @@ Fitur utama frontend meliputi:
 Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang konsisten serta tombol aksi yang jelas seperti Pesan Sekarang, Lihat Menu, Tentang, Lokasi, Franchise, dan Tambah ke Cart.
 
 ### B. Backend Development
-
+1. Arsitektur & Teknologi
+   Bahasa Pemrograman : PHP.
+   Database : MySQL
+   Server Environment : Pada tahap pengembangan menggunakan *Apache*. Saat sudah final, hosting menggunakan infinityfree
+2. Konfigurasi `koneksi.php`
+   Di tahap ini, kami membuat file khusus untuk menghubungkan semua file ke database, yaitu file `koneksi.php`. Pendekatan ini digunakan agar penulisan kode pada setiap file lebih rapih.
+   Adapun variabel-variabel yang digunakan di file `koneksi.php` adalah : 
+   a. `$host` (Database Host/Server) : Alamat (IP Address atau Domain) di mana server database MySQL berjalan.
+   b. `$user` (Database Username) : Nama pengguna yang memiliki hak akses untuk masuk ke server database.
+   c. `$pass` (Database Password) : Kata sandi yang berpasangan dengan username di atas.
+   d. `$db` (Database Name) : Nama spesifik dari database yang ingin kita kelola.
+3. Implementasi Logika Bisnis : 
+   a. Sistem Autentikasi (Login Session) :
+   b. Manajemen Konten (CRUD & File Handling) :
+       Create: Bagaimana admin menambah menu baru dan logika upload gambar (move_uploaded_file) ke folder uploads/.
+       Read: Mengambil data dari database (SELECT * FROM...) dan menampilkannya (Looping while).
+       Update/Delete: Bagaimana admin mengedit atau menghapus data berdasarkan ID (WHERE id = ...).
+   c. Integrasi Payment Gateway (API Logic)
+       File: process_payment.php.
+       Alur:
+       1. Menerima data JSON dari Frontend (file_get_contents('php://input')).
+       2. Menyimpan order ke database dengan status 'pending'.
+       3. Menyiapkan parameter request (Gross Amount, Customer Details).
+       4. Mengirim request ke Server Midtrans menggunakan cURL.
+       5. Menerima balasan berupa Snap Token.
+       6. Mengirim Token kembali ke Frontend untuk memicu popup pembayaran.
+   d. Logika Bisnis Tambahan (Franchise & Cabang)
+       Data ditangkap dengan $_POST, disanitasi (dibersihkan), lalu disimpan ke tabel franchise_leads agar bisa direview admin.
+   
 ## 2. Database Implementation
+  A. Environment : 
+      DBMS (Database Management System): MySQL / MariaDB.
+      Tools Manajemen: phpMyAdmin (melalui CPanel InfinityFree).
+      Nama Database: if0_40628472_tetra (Sesuaikan dengan nama DB hostingmu).
+      
+  B. Struktur Tabel : 
+      Website ini terdiri dari 5 tabel utama yang saling mendukung operasional sistem. Berikut adalah detail struktur masing-masing tabel:
+      <img width="1989" height="650" alt="image" src="https://github.com/user-attachments/assets/eb43bc70-c8f9-4dd4-a2f8-76be11b59c73" />
+      ``
+      a. Tabel `Admins` :  Digunakan untuk menyimpan kredensial autentikasi administrator. Password disimpan dalam bentuk hash (MD5) untuk keamanan.
+          <img width="1920" height="450" alt="image" src="https://github.com/user-attachments/assets/7af3cdc1-9452-4670-89d2-2c90367ae94d" />
+      ```
+      b. Tabel `products` : Menyimpan seluruh katalog menu yang dijual, termasuk jalur (path) lokasi file gambar yang diunggah.
+          <img width="1965" height="668" alt="image" src="https://github.com/user-attachments/assets/8a5623b0-2cb8-4522-90dc-f5eafb59405d" />
+      ``````````
+      c.  Tabel `orders` : Tabel transaksional yang mencatat setiap pesanan masuk, nilai transaksi, dan token integrasi dengan Payment Gateway.
+          <img width="2384" height="777" alt="image" src="https://github.com/user-attachments/assets/bf6fc497-9705-4e8e-994f-b010cda19ad0" />
+          ````
+      d. Tabel `franchise_leads` Menyimpan data prospek atau calon mitra yang mengisi formulir pendaftaran di website.
+          <img width="2479" height="689" alt="image" src="https://github.com/user-attachments/assets/a2e6de0a-1186-4d9f-b3a6-3b5d8f0317c9" />
+          `````
+      e. Tabel `branches` Menyimpan data lokasi fisik cabang Tetra Coffee untuk fitur Store Locator.
+          <img width="1994" height="583" alt="image" src="https://github.com/user-attachments/assets/8e735640-81e6-4cde-8d86-8cddc08f1bac" />
+
+     C. Query Pembentukan Database
+         ```
+        -- Implementasi Tabel Transaksi
+        CREATE TABLE orders (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          order_id VARCHAR(50) NOT NULL UNIQUE,
+          customer_name VARCHAR(100),
+          total_amount INT NOT NULL, 
+          status ENUM('pending', 'success', 'failed') DEFAULT 'pending',
+          snap_token VARCHAR(255),
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+          );
+          
+          -- Implementasi Tabel Franchise
+          CREATE TABLE franchise_leads (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            fullname VARCHAR(100) NOT NULL,
+            phone VARCHAR(20) NOT NULL,
+            city VARCHAR(50) NOT NULL,
+            budget_range ENUM('Dibawah 100jt', '100jt - 250jt', 'Diatas 250jt'),
+            status ENUM('pending', 'contacted') DEFAULT 'pending'
+            );
+        ```
 
 
 ## 3. Integrasi Layanan Pihak Ketiga (API)
@@ -109,3 +184,4 @@ Pada `Order Online` menampilkan form untuk data pemesan yang berisikan:
   - Alamat Pengiriman / Meja
   - Catatan Tambahan
 Setelah Mengisi form, Pemesan diminta untuk membayar pemasanannya dengan Payment method yang tersedia.
+

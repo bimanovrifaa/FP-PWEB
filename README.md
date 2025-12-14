@@ -1,5 +1,26 @@
 # FP-PWEB
 
+## 3. Integrasi Layanan Pihak Ketiga (API)
+Sistem ini dirancang dengan arsitektur terintegrasi yang menghubungkan backend PHP Native dengan layanan eksternal melalui REST API. Integrasi ini bertujuan untuk menangani fungsi kompleks seperti pembayaran digital dan geolokasi tanpa membebani server utama.
+
+### Midtrans Payment API (Snap)
+- Untuk menangani transaksi finansial, sistem menggunakan Midtrans Snap API dalam lingkungan Sandbox (uji coba). Alur integrasi data dirancang sebagai berikut:
+- Inisiasi Transaksi (Backend): Ketika pengguna melakukan checkout, sistem backend (order.php) mengumpulkan data pesanan (nama pelanggan, total harga, dan detail item) dari Local Storage.
+- Permintaan Token (API Request): Server mengirimkan permintaan HTTP POST ke endpoint API Midtrans (app.sandbox.midtrans.com/snap/v1/transactions) beserta Server Key rahasia untuk otentikasi.
+- Respon Token (API Response): Midtrans memvalidasi permintaan dan mengembalikan snap_token unik. Token ini disimpan sementara di database tabel orders untuk pelacakan.
+- Tampilan Pembayaran (Frontend): Token dikirim kembali ke browser pengguna. Pustaka Javascript snap.js menggunakan token ini untuk memunculkan antarmuka pembayaran (iframe popup) di atas website tanpa mengalihkan halaman, sehingga pengalaman pengguna (UX) tetap terjaga.
+
+### Google Maps Platform
+- Fitur peta pada modul Store Locator menggunakan integrasi berbasis tautan dinamis (Dynamic Linking) untuk efisiensi resource:
+- Penyimpanan Data: Koordinat atau tautan spesifik lokasi (contoh: https://goo.gl/maps/...) disimpan dalam tabel branches kolom maps_link.
+- Visualisasi Data: Pada halaman locations.php, sistem melakukan query ke database untuk mengambil seluruh data cabang. Tautan tersebut kemudian dirender menjadi tombol navigasi interaktif ("Petunjuk Arah").
+- Navigasi Eksternal: Ketika tombol ditekan, API akan mengarahkan pengguna langsung ke aplikasi Google Maps (pada mobile) atau situs web Maps (pada desktop) dengan titik tujuan yang sudah terkunci pada lokasi cabang yang dipilih.
+
+
+
+
+
+
 ## 4. Testing
 
 ### Tujuan Pengujian

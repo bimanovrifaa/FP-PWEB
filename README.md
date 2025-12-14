@@ -1,10 +1,10 @@
 # FP-PWEB
 
-| Name           | NRP        | Kelas     |
+| Name           | NRP        | Jobdesk    |
 | ---            | ---        | ----------|
-| Dwinanda Rakhish Baley | 5025241198 | A |
-| Bima Novrifa Ananditya | 5025241198 | A |
-| Brilian Kurniawan Prasisto | 5025241198 | A |
+| Dwinanda Rakhish Baley | 5025241198 | Frontend |
+| Bima Novrifa Ananditya | 5025241198 | Frontend |
+| Brilian Kurniawan Prasisto | 5025241198 | Backend |
 
 ## 1 Frontend & Backend Develelopment
 

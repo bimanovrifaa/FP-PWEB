@@ -4,7 +4,7 @@
 | ---            | ---        | ----------|
 | Dwinanda Rakhish Baley | 5025241198 | Frontend |
 | Bima Novrifa Ananditya | 5025241194 | Frontend |
-| Brilian Kurniawan Prasisto | 5025241213 | Backend : Pembuatan SQL, API (Payment Gateway), Integrasi dari Backend/Database ke Frontend |
+| Brilian Kurniawan Prasisto | 5025241213 | Backend : Pembuatan SQL, API (Payment Gateway), Page Admin Panel, Integrasi dari Backend/Database ke Frontend|
 
 ## 1. Frontend & Backend Develelopment
 

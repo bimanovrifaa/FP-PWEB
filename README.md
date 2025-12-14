@@ -6,7 +6,7 @@
 | Bima Novrifa Ananditya | 5025241194 | Frontend |
 | Brilian Kurniawan Prasisto | 5025241213 | Backend |
 
-## 1 Frontend & Backend Develelopment
+## 1. Frontend & Backend Develelopment
 
 ### A. Frontend Development
 Frontend dikembangkan sebagai antarmuka utama yang berinteraksi langsung dengan pengguna. Tujuan utama pengembangan frontend adalah menyediakan tampilan yang menarik, responsif, dan mudah digunakan.
@@ -22,6 +22,11 @@ Fitur utama frontend meliputi:
 - Halaman Kontak yang menyediakan kontak-kontak dari Tetra Coffee
 
 Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang konsisten serta tombol aksi yang jelas seperti Pesan Sekarang, Lihat Menu, Tentang, Lokasi, Franchise, dan Tambah ke Cart.
+
+### B. Backend Development
+
+## 2. Database Implementation
+
 
 ## 3. Integrasi Layanan Pihak Ketiga (API)
 Sistem ini dirancang dengan arsitektur terintegrasi yang menghubungkan backend PHP Native dengan layanan eksternal melalui REST API. Integrasi ini bertujuan untuk menangani fungsi kompleks seperti pembayaran digital dan geolokasi tanpa membebani server utama.

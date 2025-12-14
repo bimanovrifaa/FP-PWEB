@@ -3,8 +3,8 @@
 | Name           | NRP        | Jobdesk    |
 | ---            | ---        | ----------|
 | Dwinanda Rakhish Baley | 5025241198 | Frontend |
-| Bima Novrifa Ananditya | 5025241198 | Frontend |
-| Brilian Kurniawan Prasisto | 5025241198 | Backend |
+| Bima Novrifa Ananditya | 5025241194 | Frontend |
+| Brilian Kurniawan Prasisto | 5025241213 | Backend |
 
 ## 1 Frontend & Backend Develelopment
 

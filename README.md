@@ -57,11 +57,13 @@ Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang ko
    
 ## 2. Database Implementation
   A. Environment : 
+  `
       DBMS (Database Management System): MySQL / MariaDB.
       Tools Manajemen: phpMyAdmin (melalui CPanel InfinityFree).
       Nama Database: if0_40628472_tetra (Sesuaikan dengan nama DB hostingmu).
       
   B. Struktur Tabel : 
+  `
       Website ini terdiri dari 5 tabel utama yang saling mendukung operasional sistem. Berikut adalah detail struktur masing-masing tabel:
       <img width="1989" height="650" alt="image" src="https://github.com/user-attachments/assets/eb43bc70-c8f9-4dd4-a2f8-76be11b59c73" />
       
@@ -80,8 +82,8 @@ Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang ko
    e. Tabel `branches` Menyimpan data lokasi fisik cabang Tetra Coffee untuk fitur Store Locator.
           <img width="1994" height="583" alt="image" src="https://github.com/user-attachments/assets/8e735640-81e6-4cde-8d86-8cddc08f1bac" />
 
-      C. Query Pembentukan Database
-         ```
+   C. Query Pembentukan Database
+   ```
         -- Implementasi Tabel Transaksi
         CREATE TABLE orders (
           id INT AUTO_INCREMENT PRIMARY KEY,
@@ -102,7 +104,7 @@ Frontend dirancang dengan pendekatan user-friendly, menggunakan navigasi yang ko
             budget_range ENUM('Dibawah 100jt', '100jt - 250jt', 'Diatas 250jt'),
             status ENUM('pending', 'contacted') DEFAULT 'pending'
             );
-        ```
+ ```
 
 
 ## 3. Integrasi Layanan Pihak Ketiga (API)
